@@ -74,6 +74,7 @@
                     const linkElement = document.createElement("a");
                     linkElement.href = url;
                     linkElement.textContent = linkText;
+                    linkElement.target = "_blank"; // Open in a new tab
 
                     const resultsElement = document.getElementById('results');
                     resultsElement.innerHTML = ''; // Clear the existing content
