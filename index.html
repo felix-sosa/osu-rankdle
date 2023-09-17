@@ -68,7 +68,7 @@
                         }
                         jsonData.push(rowData);
                     }
-                    const url = jsonData[0].profile; // Replace with your actual URL
+                    const url = encodeURIComponent(jsonData[0].profile); // Replace with your actual URL
                     const linkText = "Profile"; // Replace with the text you want for the link
 
                     const linkElement = document.createElement("a");
