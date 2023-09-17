@@ -69,19 +69,17 @@
                         jsonData.push(rowData);
                     }
 
-                    document.getElementById('results').textContent = jsonData[0].profile;
+                    const url = encodeURIComponent(jsonData[0].Profile); // Replace with your actual URL
+                    const linkText = "Profile"; // Replace with the text you want for the link
 
-                    // const url = encodeURIComponent(jsonData[0].profile); // Replace with your actual URL
-                    // const linkText = "Profile"; // Replace with the text you want for the link
+                    const linkElement = document.createElement("a");
+                    linkElement.href = url;
+                    linkElement.textContent = linkText;
+                    linkElement.target = "_blank"; // Open in a new tab
 
-                    // const linkElement = document.createElement("a");
-                    // linkElement.href = url;
-                    // linkElement.textContent = linkText;
-                    // linkElement.target = "_blank"; // Open in a new tab
-
-                    // const resultsElement = document.getElementById('results');
-                    // resultsElement.innerHTML = ''; // Clear the existing content
-                    // resultsElement.appendChild(linkElement);
+                    const resultsElement = document.getElementById('results');
+                    resultsElement.innerHTML = ''; // Clear the existing content
+                    resultsElement.appendChild(linkElement);
 
         
                 } catch (error) {
@@ -92,8 +90,6 @@
             fetchData();
         </script>
               
-        
-
         <footer>
             This website was created by Felix Sosa. Contact me on twitter <a href="https://twitter.com/fesoshima" target="_blank" rel="noopener noreferrer">here.</a> 
         </footer>
