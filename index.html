@@ -69,17 +69,18 @@
                         jsonData.push(rowData);
                     }
 
-                    const url = encodeURIComponent(jsonData[0].Profile); // Replace with your actual URL
-                    const linkText = "Profile"; // Replace with the text you want for the link
+                    document.getElementById('results').textContent = jsonData[0].Profile;
+                    // const url = jsonData[0].Profile; // Replace with your actual URL
+                    // const linkText = "Profile"; // Replace with the text you want for the link
 
-                    const linkElement = document.createElement("a");
-                    linkElement.href = url;
-                    linkElement.textContent = linkText;
-                    linkElement.target = "_blank"; // Open in a new tab
+                    // const linkElement = document.createElement("a");
+                    // linkElement.href = url;
+                    // linkElement.textContent = linkText;
+                    // linkElement.target = "_blank"; // Open in a new tab
 
-                    const resultsElement = document.getElementById('results');
-                    resultsElement.innerHTML = ''; // Clear the existing content
-                    resultsElement.appendChild(linkElement);
+                    // const resultsElement = document.getElementById('results');
+                    // resultsElement.innerHTML = ''; // Clear the existing content
+                    // resultsElement.appendChild(linkElement);
 
         
                 } catch (error) {
