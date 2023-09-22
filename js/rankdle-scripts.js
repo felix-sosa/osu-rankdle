@@ -38,6 +38,11 @@ async function fetchData() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Call the function on page load
+    myFunction();
+  });
+
 //Function to deal with getting user input
 function submitFunc(){
     //Display result text
