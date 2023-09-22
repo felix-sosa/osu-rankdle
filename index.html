@@ -36,57 +36,8 @@
                 </div>
             </div>
         </header>
-        <!-- Function to deal with getting user input -->
-        <script>
-            function submitFunc(){
-                //Display result text
-                const text = document.getElementById("results");
-                text.style.display = "block";
-            }
-        </script>
-        <!-- Function to get player profile link from google sheet and display once guess has been submitted -->
-        <script>
-            const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzxWLOwyQsZP0Acll26QlKH8KlENvFc7eVosEbKB_A6jbXPh0GHlOoVeg2baAG8JOVr7AsqeqhS6M/pub?output=csv';
-        
-            async function fetchData() {
-                try {
-                    const response = await fetch(googleSheetURL);
-                    const csvData = await response.text();
-        
-                    // Parse CSV data into an array of objects
-                    const rows = csvData.split('\n');
-                    const headers = rows[0].split(',');
-                    const jsonData = [];
-        
-                    for (let i = 1; i < rows.length; i++) {
-                        const row = rows[i].split(',');
-                        const rowData = {};
-                        for (let j = 0; j < headers.length; j++) {
-                            rowData[headers[j]] = row[j];
-                        }
-                        jsonData.push(rowData);
-                    }
 
-                    const url = jsonData[0].Profile; // Replace with your actual URL
-                    const linkText = "Profile"; // Replace with the text you want for the link
-
-                    const linkElement = document.createElement("a");
-                    linkElement.href = url;
-                    linkElement.textContent = linkText;
-                    linkElement.target = "_blank"; // Open in a new tab
-
-                    const resultsElement = document.getElementById('results');
-                    resultsElement.innerHTML = ''; // Clear the existing content
-                    resultsElement.appendChild(linkElement);
-
-        
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                }
-            }
-        
-            fetchData();
-        </script>
+        fetchData();
               
         <footer>
             This website was created by Felix Sosa. Contact me on twitter <a href="https://twitter.com/fesoshima" target="_blank" rel="noopener noreferrer">here.</a> 
@@ -97,6 +48,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="js/rankdle-scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
