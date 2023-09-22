@@ -40,7 +40,7 @@ async function fetchData() {
 
 document.addEventListener("DOMContentLoaded", function() {
     // Call the function on page load
-    myFunction();
+    fetchData();
   });
 
 //Function to deal with getting user input
